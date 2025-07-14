@@ -1,6 +1,9 @@
 import { ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
+  const baseNumber = "5584999837160";
+
   const streamings = [
     {
       name: "globoplay + canais",
@@ -122,6 +125,15 @@ export default function Home() {
     },
   ];
 
+  const updatedStreamings = streamings.map((s) => {
+    const message = `Olá, vim pelo site e gostaria de adquirir uma conta de ${s.name}`;
+    const encodedMessage = encodeURIComponent(message);
+    return {
+      ...s,
+      link: `https://wa.me/${baseNumber}?text=${encodedMessage}`,
+    };
+  });
+
   const colorMap: Record<string, string> = {
     "orange-400": "border-t-orange-400",
     "red-400": "border-t-red-400",
@@ -135,41 +147,41 @@ export default function Home() {
     <main className="w-full h-full">
       {/* <header className="w-full py-6"></header> */}
 
-      <section className="w-full max-w-full bg-[url('/hero-bg.jpeg')] bg-fill bg-center h-[780px]"></section>
+      <section className="w-full max-w-full bg-[url('/hero-bg.jpeg')] bg-cover bg-right-top h-[400px]"></section>
 
-      <section className="w-full flex items-center justify-between flex-row flex-wrap py-8 px-40 bg-neutral-900 gap-20">
+      <section className="w-full flex items-center justify-between flex-col flex-wrap py-8 bg-neutral-900 gap-10">
         <div className="text-center">
-          <h5 className="text-4xl font-extrabold">10K+</h5>
-          <p className="">Clientes Satisfeitos</p>
+          <h5 className="text-3xl font-extrabold">10K+</h5>
+          <p className="text-sm">Clientes Satisfeitos</p>
         </div>
         <div className="text-center">
-          <h5 className="text-4xl font-extrabold">15+</h5>
-          <p className="">Plataformas Disponíveis</p>
+          <h5 className="text-3xl font-extrabold">15+</h5>
+          <p className="text-sm">Plataformas Disponíveis</p>
         </div>
         <div className="text-center">
-          <h5 className="text-4xl font-extrabold">24/7</h5>
-          <p className="">Suporte Premium</p>
+          <h5 className="text-3xl font-extrabold">24/7</h5>
+          <p className="text-sm">Suporte Premium</p>
         </div>
         <div className="text-center">
-          <h5 className="text-4xl font-extrabold">90%</h5>
-          <p className="">Economia</p>
+          <h5 className="text-3xl font-extrabold">90%</h5>
+          <p className="text-sm">Economia</p>
         </div>
       </section>
 
-      <section className="w-full flex items-center justify-center py-10 flex-col">
-        <h4 className="text-3xl font-extrabold mb-2">
+      <section className="w-full flex items-center justify-center py-10 px-10 flex-col">
+        <h4 className="text-2xl font-extrabold mb-2 text-center">
           Contas Premium Disponíveis
         </h4>
 
-        <p className="block text-md text mb-10">
+        <p className="block text-sm text mb-10 text-center">
           Escolha entre as principais plataformas digitais com acesso completo,
           sem limitações.
         </p>
 
-        <div className="w-full flex items-center justify-center flex-row flex-wrap gap-8 px-10">
-          {streamings.map((streaming) => (
+        <div className="w-full flex items-center justify-center flex-row flex-wrap gap-8">
+          {updatedStreamings.map((streaming) => (
             <div
-              className={`px-8 py-8 bg-neutral-900 rounded-lg border-t-8 min-w-[25%] ${
+              className={`px-8 py-8 bg-neutral-900 rounded-lg border-t-8 min-w-[25%] w-full ${
                 colorMap[streaming.cor]
               }`}
               key={streaming.name}
@@ -191,10 +203,14 @@ export default function Home() {
                 <p className="font-extrabold">R$ {streaming.preco}/mês</p>
               </div>
 
-              <div className="w-full flex items-center justify-center gap-2 bg-neutral-800 hover:bg-red-400 transform duration-500 py-4 rounded-lg cursor-pointer">
+              <Link
+                href={streaming.link}
+                target="_blank"
+                className="w-full flex items-center justify-center gap-2 bg-neutral-800 hover:bg-red-400 transform duration-500 py-4 rounded-lg cursor-pointer"
+              >
                 <ShoppingCart />
                 <p className="font-extrabold">Comprar agora</p>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
