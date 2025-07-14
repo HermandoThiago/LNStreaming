@@ -147,33 +147,33 @@ export default function Home() {
     <main className="w-full h-full">
       {/* <header className="w-full py-6"></header> */}
 
-      <section className="w-full max-w-full bg-[url('/hero-bg.jpeg')] bg-cover bg-right-top h-[400px]"></section>
+      <section className="w-full max-w-full bg-[url('/hero-bg.jpeg')] bg-cover bg-right-top h-[400px] md:h-[780px] md:bg-fill md:bg-center"></section>
 
-      <section className="w-full flex items-center justify-between flex-col flex-wrap py-8 bg-neutral-900 gap-10">
+      <section className="w-full flex items-center justify-between flex-col flex-wrap py-8 bg-neutral-900 gap-10 md:flex-row md:px-40 md:justify-center md:gap-20">
         <div className="text-center">
-          <h5 className="text-3xl font-extrabold">10K+</h5>
-          <p className="text-sm">Clientes Satisfeitos</p>
+          <h5 className="text-3xl font-extrabold md:text-4xl">10K+</h5>
+          <p className="text-sm md:text-md">Clientes Satisfeitos</p>
         </div>
         <div className="text-center">
-          <h5 className="text-3xl font-extrabold">15+</h5>
-          <p className="text-sm">Plataformas Disponíveis</p>
+          <h5 className="text-3xl font-extrabold md:text-4xl">15+</h5>
+          <p className="text-sm md:text-md">Plataformas Disponíveis</p>
         </div>
         <div className="text-center">
-          <h5 className="text-3xl font-extrabold">24/7</h5>
-          <p className="text-sm">Suporte Premium</p>
+          <h5 className="text-3xl font-extrabold md:text-4xl">24/7</h5>
+          <p className="text-sm md:text-md">Suporte Premium</p>
         </div>
         <div className="text-center">
-          <h5 className="text-3xl font-extrabold">90%</h5>
-          <p className="text-sm">Economia</p>
+          <h5 className="text-3xl font-extrabold md:text-4xl">90%</h5>
+          <p className="text-sm md:text-md">Economia</p>
         </div>
       </section>
 
       <section className="w-full flex items-center justify-center py-10 px-10 flex-col">
-        <h4 className="text-2xl font-extrabold mb-2 text-center">
+        <h4 className="text-2xl font-extrabold mb-2 text-center md:text-3xl">
           Contas Premium Disponíveis
         </h4>
 
-        <p className="block text-sm text mb-10 text-center">
+        <p className="block text-sm text mb-10 text-center md:text-lg">
           Escolha entre as principais plataformas digitais com acesso completo,
           sem limitações.
         </p>
@@ -181,7 +181,7 @@ export default function Home() {
         <div className="w-full flex items-center justify-center flex-row flex-wrap gap-8">
           {updatedStreamings.map((streaming) => (
             <div
-              className={`px-8 py-8 bg-neutral-900 rounded-lg border-t-8 min-w-[25%] w-full ${
+              className={`px-8 py-8 bg-neutral-900 rounded-lg border-t-8 min-w-[25%] w-full md:w-1/4 ${
                 colorMap[streaming.cor]
               }`}
               key={streaming.name}
