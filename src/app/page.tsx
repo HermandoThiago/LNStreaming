@@ -147,9 +147,9 @@ export default function Home() {
     <main className="w-full h-full">
       {/* <header className="w-full py-6"></header> */}
 
-      <section className="w-full max-w-full bg-[url('/hero-bg.jpeg')] bg-cover bg-right-top h-[400px] md:h-[780px] md:bg-fill md:bg-center"></section>
+      {/* <section className="w-full max-w-full bg-[url('/hero-bg.jpeg')] bg-cover bg-right-top h-[400px] md:h-[780px] md:bg-fill md:bg-center"></section> */}
 
-      <section className="w-full flex items-center justify-between flex-col flex-wrap py-8 bg-neutral-900 gap-10 md:flex-row md:px-40 md:justify-center md:gap-20">
+      {/* <section className="w-full flex items-center justify-between flex-col flex-wrap py-8 bg-neutral-900 gap-10 md:flex-row md:px-40 md:justify-center md:gap-20">
         <div className="text-center">
           <h5 className="text-3xl font-extrabold md:text-4xl">10K+</h5>
           <p className="text-sm md:text-md">Clientes Satisfeitos</p>
@@ -166,7 +166,7 @@ export default function Home() {
           <h5 className="text-3xl font-extrabold md:text-4xl">90%</h5>
           <p className="text-sm md:text-md">Economia</p>
         </div>
-      </section>
+      </section> */}
 
       <section className="w-full flex items-center justify-center py-10 px-10 flex-col">
         <h4 className="text-2xl font-extrabold mb-2 text-center md:text-3xl">
