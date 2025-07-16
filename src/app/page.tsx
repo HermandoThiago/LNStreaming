@@ -198,8 +198,8 @@ export default function Home() {
                 <p className="uppercase text-xl font-bold">{streaming.name}</p>
               </div>
 
-              <div className="w-full flex items-center justify-between mb-8">
-                <p className="text-neutral-400">Conta Completa</p>
+              <div className="w-full flex items-center justify-center mb-8">
+                {/* <p className="text-neutral-400">Conta Completa</p> */}
                 <p className="font-extrabold">R$ {streaming.preco}/mês</p>
               </div>
 
