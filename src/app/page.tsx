@@ -1,8 +1,17 @@
+"use client";
+
 import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
-
+import { useSearchParams } from "next/navigation";
 export default function Home() {
-  const baseNumber = "5584999837160";
+  const searchParams = useSearchParams();
+  const numberParam = searchParams.get("numero") || "5584999837160";
+
+  const numbersPermissions = ["5584999837160", "5584999300655"];
+
+  const baseNumber = numbersPermissions.includes(numberParam)
+    ? numberParam
+    : "5584999837160";
 
   const streamings = [
     {
