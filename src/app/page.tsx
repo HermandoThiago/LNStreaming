@@ -1,6 +1,6 @@
 "use client";
 
-import { ShoppingCart } from "lucide-react";
+import { ChevronsDown, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 export default function Home() {
@@ -156,7 +156,7 @@ export default function Home() {
     <main className="w-full h-full">
       {/* <header className="w-full py-6"></header> */}
 
-      {/* <section className="w-full max-w-full bg-[url('/hero-bg.jpeg')] bg-cover bg-right-top h-[400px] md:h-[780px] md:bg-fill md:bg-center"></section> */}
+      <section className="w-full max-w-full bg-[url('/tabela-ln.jpeg')] md:hidden md:bg-[url('/bg-kv-streaming.jpeg')] bg-cover bg-left h-[400px] md:h-[600px] md:bg-fill md:bg-center"></section>
 
       {/* <section className="w-full flex items-center justify-between flex-col flex-wrap py-8 bg-neutral-900 gap-10 md:flex-row md:px-40 md:justify-center md:gap-20">
         <div className="text-center">
@@ -178,14 +178,20 @@ export default function Home() {
       </section> */}
 
       <section className="w-full flex items-center justify-center py-10 px-10 flex-col">
-        <h4 className="text-2xl font-extrabold mb-2 text-center md:text-3xl">
-          Contas Premium Disponíveis
-        </h4>
+        <div className="py-14">
+          <h4 className="text-2xl font-extrabold mb-2 text-center md:text-3xl">
+            Contas Premium Disponíveis
+          </h4>
 
-        <p className="block text-sm text mb-10 text-center md:text-lg">
-          Escolha entre as principais plataformas digitais com acesso completo,
-          sem limitações.
-        </p>
+          <p className="block text-sm text mb-10 text-center md:text-lg">
+            Escolha entre as principais plataformas digitais com acesso
+            completo, sem limitações.
+          </p>
+
+          <div className="w-full flex items-center justify-center">
+            <ChevronsDown className="h-14 w-14 animate-bounce" />
+          </div>
+        </div>
 
         <div className="w-full flex items-center justify-center flex-row flex-wrap gap-8">
           {updatedStreamings.map((streaming) => (
