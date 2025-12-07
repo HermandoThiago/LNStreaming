@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronsDown, ShoppingCart } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 export default function Home() {
@@ -202,8 +203,10 @@ export default function Home() {
               key={streaming.name}
             >
               <div className="w-full flex items-center justify-start gap-4 mb-6">
-                <img
+                <Image
                   src={streaming.imagem}
+                  width={60}
+                  height={60}
                   className="w-[60px] h-[60px] rounded-lg"
                   alt=""
                 />
